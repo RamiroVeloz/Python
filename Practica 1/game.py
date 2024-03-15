@@ -12,10 +12,28 @@ max_attempts = 10
 # Lista para almacenar las letras adivinadas
 guessed_letters = []
 print("¡Bienvenido al juego de adivinanzas!")
-print("Estoy pensando en una palabra. ¿Puedes adivinar cuál es?")
-word_displayed = "_" * len(secret_word)
+
+word_displayed = ""
+#Seleccionar dificultad para el juego
+diff = int(input('Ingrese un numero para seleccionar la dificultad: \n 1- Facil \n 2- Medio \n 3- Dificil \n Elija :D :'))
+if (diff == 1):
+    vocales = ['a', 'e', 'i', 'o', 'u']
+    for x in secret_word:
+        if (x in vocales):
+            word_displayed += x
+        else:
+            word_displayed += '_'
+elif (diff == 2):
+    word_displayed += secret_word[0]
+    word_displayed += "_" * (len(secret_word) -2)
+    word_displayed += secret_word[len(secret_word)-1]
+elif (diff == 3):
+    word_displayed = "_" * len(secret_word)
+
+
 
 # Mostrarla palabra parcialmente adivinada
+print("Estoy pensando en una palabra. ¿Puedes adivinar cuál es?")
 print(f"Palabra: {word_displayed}")
 
 while (max_attempts > 0):
