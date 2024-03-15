@@ -49,12 +49,11 @@ for i in range(max_attempts):
         else:
             letters.append("_")
         word_displayed = "".join(letters)
-        print(f"Palabra: {word_displayed}")
+    print(f"Palabra: {word_displayed}")
 
         # Verificar si se ha adivinado la palabra completa
     if word_displayed == secret_word:
-        print(f"¡Felicidades! Has adivinado la palabra secreta:
-        {secret_word}")
+        print(f"¡Felicidades! Has adivinado la palabra secreta:{secret_word}")
         break
 else:
     print(f"¡Oh no! Has agotado tus {max_attempts} intentos.")
