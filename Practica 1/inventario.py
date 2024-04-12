@@ -1,3 +1,4 @@
+#Modulo que agrega un producto al diccionario
 def add_prod (inv):
     nom = input('Ingrese el nombre del producto que desea agregar: ').lower()
     
@@ -15,14 +16,14 @@ def add_prod (inv):
         cant = int(input('Ingrese la cantidad inicial del producto: '))
         inv [nom] = cant
 
-
+#Modulo que borra un producto del inventario
 def delete_prod (inv):
     nom = input('Ingrese el nombre del producto que desea eliminar: ')
     for x in inv:
         if nom == x:
             inv.pop(x)
             break
-
+#Modulo que muestra el inventario
 def show_inv (inv):
     print ('Marca   |   Stock')
     print (inv)
